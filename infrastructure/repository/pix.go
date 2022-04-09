@@ -4,7 +4,7 @@ import (
 	model "codepix/domain/model"
 	"fmt"
 
-	"gorm.io/gorm"
+	"github.com/jinzhu/gorm"
 )
 
 // It's important to state the reposittories should be group by aggregated, not by entity
@@ -32,14 +32,14 @@ func (r PixKeyRespositoryDB) AddAccount(account *model.Account) error {
 	return nil
 }
 
-func (r PixKeyRespositoryDB) RegisterKey(pixKey *model.PixKey) error {
+func (r PixKeyRespositoryDB) RegisterKey(pixKey *model.PixKey) (*model.PixKey, error) {
 	err := r.DB.Create(pixKey).Error
 
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	return err
+	return nil, err
 }
 
 func (r PixKeyRespositoryDB) FindKeyByKind(key string, kind string) (*model.PixKey, error) {
