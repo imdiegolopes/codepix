@@ -11,7 +11,7 @@ import (
 type PixKey struct {
 	Base      `valid:"required"`
 	Kind      string   `json:"kind" valid:"notnull"`
-	Key       string   `json:"key valid:"notnull"`
+	Key       string   `json:"key" valid:"notnull"`
 	AccountID string   `json:"account_id" valid:"notnull"`
 	Account   *Account `valid:"required"`
 	Status    string   `json:"status" valid:"notnull"`
