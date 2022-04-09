@@ -3,6 +3,7 @@ package usecase
 import (
 	model "codepix/domain/model"
 	"fmt"
+	"log"
 )
 
 type TransactionUseCase struct {

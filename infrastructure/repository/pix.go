@@ -70,7 +70,7 @@ func (r PixKeyRespositoryDB) FindBank(id string) (*model.Bank, error) {
 	r.DB.First(&bank, "id = ?", id)
 
 	if bank.ID == "" {
-		return nil, fmt.Errorf("PixKeyRespositoryDB: No bank was found for given ID &s", id)
+		return nil, fmt.Errorf("PixKeyRespositoryDB: No bank was found for given ID %s", id)
 	}
 
 	return &bank, nil

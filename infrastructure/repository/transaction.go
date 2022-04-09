@@ -37,7 +37,7 @@ func (r TransactionRepositoryDB) Find(id string) (*model.Transaction, error) {
 	r.DB.Preload("AccountFrom.Bank").First(&transaction, "id = ?", id)
 
 	if transaction.ID == "" {
-		return nil, fmt.Errorf("TransactionRepositoryDB: No transaction was found for given ID &s", id)
+		return nil, fmt.Errorf("TransactionRepositoryDB: No transaction was found for given ID %s", id)
 	}
 
 	return &transaction, nil
