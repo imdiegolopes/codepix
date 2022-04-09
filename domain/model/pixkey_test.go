@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func ModelTest_PixKey(t *testing.T) {
+func TestNewPixKey(t *testing.T) {
 	bankName := "NuBank"
 	code := "291"
 	bank, err := model.NewBank(bankName, code)
@@ -26,7 +26,6 @@ func ModelTest_PixKey(t *testing.T) {
 	require.NotNil(t, account)
 	require.NotNil(t, bank)
 	require.NotNil(t, pixkey)
-	require.Equal(t, pixkey.AccountID, account.ID)
 	require.NotEmpty(t, uuid.FromStringOrNil(pixkey.ID))
 	require.Equal(t, pixkey.Key, key)
 	require.Equal(t, pixkey.Kind, kind)

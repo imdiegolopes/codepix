@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func ModelBank_NewBank(t *testing.T) {
+func TestNewBank(t *testing.T) {
 	name := "Banco Itaú"
 	code := "341"
 

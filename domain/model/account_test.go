@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestModel_NewAccount(t *testing.T) {
+func TestNewAccount(t *testing.T) {
 	code := "001"
 	name := "Banco do Brasil"
 	bank, err := model.NewBank(name, code)

@@ -9,9 +9,9 @@ import (
 
 type Bank struct {
 	Base     `valid:"required"`
-	Name     string     `json:"name" valid:"notnull"`
-	Code     string     `json:"code" valid:"notnull"`
-	Accounts []*Account `valid:"-"`
+	Name     string     `json:"name" gorm:"type:varchar(20)" valid:"notnull"`
+	Code     string     `json:"code" gorm:"type:varchar(255)" valid:"notnull"`
+	Accounts []*Account `gorm:"ForeignKey:BankID" valid:"-"`
 }
 
 // Isso é um método no Go.
