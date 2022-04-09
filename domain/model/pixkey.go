@@ -22,6 +22,7 @@ type PixKeyRepositoryInterface interface {
 	FindKeyByKind(key string, kind string) (*PixKey, error)
 	AddBank(bank *Bank) error
 	AddAccount(account *Account) error
+	FindBank(id string) (*Bank, error)
 	FindAccount(id string) (*Account, error)
 }
 
